@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const errorText = 'FS operation failed';
 
 const copy = async () => {
     try {
@@ -19,7 +20,7 @@ const copy = async () => {
         }
     } catch {
         try {
-            throw new Error('FS operation failed');
+            throw new Error(errorText);
         } catch (error) {
             console.error(error);
         }
