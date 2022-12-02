@@ -1,4 +1,5 @@
 const prefix = 'RSS_';
+const glue = '; ';
 
 const parseEnv = () => {
   const { env } = process;
@@ -6,7 +7,7 @@ const parseEnv = () => {
     .filter(([key]) => key.startsWith(prefix))
     .map(([key, val]) => `${key}=${val}`);
 
-  console.log(results.join('; '));
+  console.log(results.join(glue));
 };
 
 parseEnv();
