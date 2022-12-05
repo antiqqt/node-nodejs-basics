@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(__filename);
 const workerPath = join(__dirname, 'worker.js');
 
 const performCalculations = async () => {
